@@ -23,8 +23,8 @@ jobs:
           
       - name: Pull files
         run: |
-          git config --local user.email "murongpig@foxmail.com"
-          git config --local user.name "MuRongPIG"
+          git config --local user.email "ahmadjerjaw@gmail.com"
+          git config --local user.name "ahmadjerjawi"
           git pull origin main
       
       - name: Get proxies
@@ -39,9 +39,7 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.MY_TOKEN }}
           branch: main
           directory: .
-           env:
-        pythonLocation: /opt/hostedtoolcache/Python/3.10.9/x64
-        LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.9/x64/lib
+
