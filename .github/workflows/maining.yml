@@ -2,7 +2,7 @@ name: get proxy
 
 on:
   schedule:
-  - cron: '*/60 * * * *'
+    - cron: '*/60 * * * *'
 
 jobs:
   build:
@@ -23,8 +23,8 @@ jobs:
           
       - name: Pull files
         run: |
-          git config --local user.email "ahmadjerjaw@gmail.com"
-          git config --local user.name "ahmadjerjawi"
+          git config --local user.email "murongpig@foxmail.com"
+          git config --local user.name "MuRongPIG"
           git pull origin main
       
       - name: Get proxies
@@ -40,4 +40,8 @@ jobs:
         uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main 
+          branch: main
+          directory: .
+           env:
+        pythonLocation: /opt/hostedtoolcache/Python/3.10.9/x64
+        LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.9/x64/lib
